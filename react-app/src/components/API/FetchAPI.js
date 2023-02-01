@@ -12,6 +12,7 @@ function FetchAPI() {
             .then((json) => {
                 console.log(json);
                 setData(json);
+                // setData({data: data.Results});
             });
     };
     // AUTOMATICALY CLICKS FETCH API BUTTON
@@ -24,11 +25,12 @@ function FetchAPI() {
             My API <br />
             <button onClick={apiGet}>Fetch API</button>
             <br />
-            <pre>{JSON.stringify(data,null,2)}</pre>
+            <pre>{JSON.stringify(data.Results,null,2)}</pre>
+            
 
             {/* <div>
                 <ul>
-                    {data.map(item =>
+                    {data.Results.map(item =>
                         <li>{item}</li>
                         )}
                 </ul>
