@@ -4,6 +4,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+// GOOGLE API LINES
+
+// END OF GOOGLE API LINES
+
+
 function FetchAPI() {
 
     const [data, setData] = useState([])
@@ -29,8 +34,8 @@ function FetchAPI() {
             My API <br />
             <button onClick={apiGet}>Fetch API</button>
             <br />
-
-            <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre>
+        
+            {/* <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre> */}
             {/* CONSIDER MAKING THIS A TABLE */}
             <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                 <ListItem>
