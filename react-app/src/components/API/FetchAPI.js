@@ -1,5 +1,8 @@
 import React, { useState} from 'react'
 // import {useEffect} from 'react'
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
 function FetchAPI() {
 
@@ -21,15 +24,24 @@ function FetchAPI() {
     // }, []);
 
     return (
+        
         <div>
             My API <br />
             <button onClick={apiGet}>Fetch API</button>
             <br />
+
             <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre>
+
+            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                <ListItem>
+                    <ListItemText primary="Year" secondary={JSON.stringify(data.Results[0].ModelYear,null,2)}> </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Make" secondary={JSON.stringify(data.Results[0].Make,null,2)}> </ListItemText>
+                </ListItem>
+            </List>
             {/* <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre> */}
             
-            
-
             {/* <div>
                 <ul>
                     {data.Results.map(item =>
