@@ -25,7 +25,9 @@ function FetchAPI() {
             My API <br />
             <button onClick={apiGet}>Fetch API</button>
             <br />
-            <pre>{JSON.stringify(data.Results,null,2)}</pre>
+            <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre>
+            {/* <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre> */}
+            
             
 
             {/* <div>
