@@ -31,7 +31,7 @@ function FetchAPI() {
             <br />
 
             <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre>
-
+            {/* CONSIDER MAKING THIS A TABLE */}
             <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                 <ListItem>
                     <ListItemText primary="Year" secondary={JSON.stringify(data.Results[0].ModelYear,null,2)}> </ListItemText>
@@ -39,8 +39,36 @@ function FetchAPI() {
                 <ListItem>
                     <ListItemText primary="Make" secondary={JSON.stringify(data.Results[0].Make,null,2)}> </ListItemText>
                 </ListItem>
-            </List>
-            {/* <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre> */}
+                <ListItem>
+                    <ListItemText primary="Model" secondary={JSON.stringify(data.Results[0].Model,null,2)}> </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Body Style" secondary={JSON.stringify(data.Results[0].BodyClass,null,2)}> </ListItemText>
+                </ListItem>
+                {/* SIX OTHER VEHICLE FEATURES */}
+                <ListItem>
+                    <ListItemText primary="Vehicle Type" secondary={JSON.stringify(data.Results[0].VehicleType,null,2)}> </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Primary Fuel Type" secondary={JSON.stringify(data.Results[0].FuelTypePrimary,null,2)}> </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Fuel Injection Type" secondary={JSON.stringify(data.Results[0].FuelInjectionType,null,2)}> </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Brake System Type" secondary={JSON.stringify(data.Results[0].BrakeSystemType,null,2)}> </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Drive Type" secondary={JSON.stringify(data.Results[0].DriveType,null,2)}> </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemText primary="Maximum Weight Rating" secondary={JSON.stringify(data.Results[0].GVWR,null,2)}> </ListItemText>
+                </ListItem>
+                
+                
+            </List> 
+
+            {/* <pre>{JSON.stringify(data.Results[0].Make,null,2)}</pre>
             
             {/* <div>
                 <ul>
