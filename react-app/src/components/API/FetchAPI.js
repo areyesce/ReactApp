@@ -47,6 +47,7 @@ const FetchAPI = () => {
 
     return (
         <div>
+            <h1>Enter VIN Number</h1>
             <input onChange={fetchData} label="Search VIN"/>
             {data.length > 0 && (
                 <ul>
