@@ -4,9 +4,20 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
-// GOOGLE API LINES
+// // GOOGLE API LINES
+// import google from 'googlethis'; 
 
+// const options = {
+//     page: 0, 
+//     safe: false, // Safe Search
+//     parse_ads: false, // If set to true sponsored results will be parsed
+//     additional_params: { 
+//       // add additional parameters here, see https://moz.com/blog/the-ultimate-guide-to-the-google-search-parameters and https://www.seoquake.com/blog/google-search-param/
+//       hl: 'en' 
+//     }
+//   }
 // END OF GOOGLE API LINES
+
 
 
 const FetchAPI = () => {
@@ -22,7 +33,17 @@ const FetchAPI = () => {
             .then(result => {
                 setData(result.Results)
             })
+            .catch(err =>{
+                console.log(err)
+            })
+        
+        
     }
+    // async function searchGoogle(data) {
+    //     const searchString = data.Make.toString() + '+' + data.Model.toString() + '+' + data.ModelYear.toString() + '+' + data.BodyClass.toString()
+    //     const googleResult = await google.search(searchString, options);
+    //     console.log(googleResult);
+    // }
 
     return (
         <div>
@@ -68,11 +89,13 @@ const FetchAPI = () => {
             )}
             
         </div>
+        
     )
-
     
 
 }
+
+
     // useEffect( () => {
     //   async function fetchInfo(){
     //       const response = await fetch(url)
