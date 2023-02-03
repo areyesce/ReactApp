@@ -20,6 +20,7 @@ import youtubesearchapi from 'youtube-search-api'
 const FetchAPI = () => {
     const [data, setData] = useState([])
     const [videos, setVideos] = useState([])
+    const [hasInfo, setHasInfo] = useState(null)
 
     useEffect(() => {
         if (data.length > 0) {
@@ -33,7 +34,7 @@ const FetchAPI = () => {
     //     if (videos.items.length > 0) {
     //         console.log('VIDEOS useEffect called')
     //         console.log(videos)
-    //         YoutubeEmbed(videos.items[0].id)
+    //         // YoutubeEmbed(videos.items[0].id)
     //     }
     // }, [videos]); 
     // // const url = 'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/1FTFW1ET7CFC19542?format=json'
@@ -52,9 +53,11 @@ const FetchAPI = () => {
             })
     }
     async function searchYoutube(data) {
-        const searchString = `${data[0].Make} ${data[0].Model} ${data[0].ModelYear} ${data[0].BodyClass}`
+        // const searchString = `${data[0].Make} ${data[0].Model} ${data[0].ModelYear} ${data[0].BodyClass}`
+        const searchString = `${data[0].Make} ${data[0].Model} ${data[0].ModelYear} ${data[0].BodyClass}&origin=https://localhost:3000`
         const videos = await youtubesearchapi.GetListByKeyword(searchString,false,3,[{type:"video"}])
         setVideos(videos)
+        setHasInfo(true)
         console.log('youtube result')
         console.log(videos.items)
         console.log(videos.items[0].id);
@@ -71,7 +74,7 @@ const FetchAPI = () => {
                 <ul>
                     {data.map(info => (
                         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                            <ListItem>
+                            <ListItem> 
                                 <ListItemText primary="Year" secondary={info.ModelYear}> </ListItemText> 
                             </ListItem>
                             <ListItem>
@@ -106,10 +109,15 @@ const FetchAPI = () => {
                     ))}
                 </ul>
             )}
-            {/* <YoutubeEmbed embedId={videos.items[0].id} /> */}
             
-            {videos.length > 0 && videos.items.length > 0 && ( 
+            {hasInfo && ( 
                 <YoutubeEmbed embedId={videos.items[0].id} />
+            )}
+            {hasInfo && ( 
+                <YoutubeEmbed embedId={videos.items[1].id} />
+            )}
+            {hasInfo && ( 
+                <YoutubeEmbed embedId={videos.items[2].id} />
             )}
             
             
