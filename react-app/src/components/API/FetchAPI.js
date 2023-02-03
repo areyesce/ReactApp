@@ -4,9 +4,15 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+// YOUTUBE IMPORTS
+import "./styles.css";
+import YoutubeEmbed from "./YoutubeEmbed";
+
 // // GOOGLE API LINES
 // import google from 'googlethis'; 
+// MENTION CORS CHROME EXTENSION
 // END OF GOOGLE API LINES
+
 
 // const youtubesearchapi = require("youtube-search-api");
 import youtubesearchapi from 'youtube-search-api' 
@@ -17,12 +23,20 @@ const FetchAPI = () => {
 
     useEffect(() => {
         if (data.length > 0) {
-            console.log('useEffect called')
+            console.log('DATA useEffect called')
             console.log(data)
-            searchGoogle(data)
+            searchYoutube(data)
         }
     }, [data]); 
-    // const url = 'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/1FTFW1ET7CFC19542?format=json'
+
+    // useEffect(() => {
+    //     if (videos.items.length > 0) {
+    //         console.log('VIDEOS useEffect called')
+    //         console.log(videos)
+    //         YoutubeEmbed(videos.items[0].id)
+    //     }
+    // }, [videos]); 
+    // // const url = 'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/1FTFW1ET7CFC19542?format=json'
 
     const fetchData = e => {
         const query = e.target.value
@@ -37,15 +51,17 @@ const FetchAPI = () => {
                 console.log(err)
             })
     }
-    async function searchGoogle(data) {
-        console.log('google result')
-        console.log(data)
+    async function searchYoutube(data) {
         const searchString = `${data[0].Make} ${data[0].Model} ${data[0].ModelYear} ${data[0].BodyClass}`
         const videos = await youtubesearchapi.GetListByKeyword(searchString,false,3,[{type:"video"}])
         setVideos(videos)
-        // console.log(videos.items[0]); 
-        
+        console.log('youtube result')
+        console.log(videos.items)
+        console.log(videos.items[0].id);
+        // YoutubeEmbed(videos.items[0].id)
+        // <YoutubeEmbed embedId={videos.items[0].id} />
     }
+
 
     return (
         <div>
@@ -90,7 +106,15 @@ const FetchAPI = () => {
                     ))}
                 </ul>
             )}
-            <h2>VIDEOS</h2>
+            {/* <YoutubeEmbed embedId={videos.items[0].id} /> */}
+            
+            {videos.length > 0 && videos.items.length > 0 && ( 
+                <YoutubeEmbed embedId={videos.items[0].id} />
+            )}
+            
+            
+            
+
             
         </div>
         
