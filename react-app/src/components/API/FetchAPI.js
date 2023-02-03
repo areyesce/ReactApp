@@ -13,6 +13,7 @@ import youtubesearchapi from 'youtube-search-api'
 
 const FetchAPI = () => {
     const [data, setData] = useState([])
+    const [videos, setVideos] = useState([])
 
     useEffect(() => {
         if (data.length > 0) {
@@ -40,9 +41,9 @@ const FetchAPI = () => {
         console.log('google result')
         console.log(data)
         const searchString = `${data[0].Make} ${data[0].Model} ${data[0].ModelYear} ${data[0].BodyClass}`
-        
-        const images = await youtubesearchapi.GetListByKeyword(searchString,false,3,[{type:"video"}])
-        console.log(images); 
+        const videos = await youtubesearchapi.GetListByKeyword(searchString,false,3,[{type:"video"}])
+        setVideos(videos)
+        // console.log(videos.items[0]); 
         
     }
 
@@ -89,6 +90,7 @@ const FetchAPI = () => {
                     ))}
                 </ul>
             )}
+            <h2>VIDEOS</h2>
             
         </div>
         
