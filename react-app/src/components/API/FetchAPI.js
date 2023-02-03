@@ -74,7 +74,7 @@ const FetchAPI = () => {
                 <ul>
                     {data.map(info => (
                         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                            <ListItem key={info.ModelYear}> 
+                            <ListItem> 
                                 <ListItemText primary="Year" secondary={info.ModelYear}> </ListItemText> 
                             </ListItem>
                             <ListItem>
@@ -105,7 +105,6 @@ const FetchAPI = () => {
                                 <ListItemText primary="Maximum Weight Rating" secondary={info.GVWR}> </ListItemText> 
                             </ListItem>
                         </List> 
-                        // <li key={info.Make}>{info.Make}</li>
                     ))}
                 </ul>
             )}
