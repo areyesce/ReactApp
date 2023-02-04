@@ -1,16 +1,15 @@
-// import logo from './logo.svg';
 import './App.css';
 import FetchAPI from "./components/API/FetchAPI";
-// import GoogleAPI from "./components/API/GoogleAPI";
+
+// Function: App
+// Purpose: Called in index.js
+// Return: Call to FetchAPI file which prompts user to enter VIN number
 
 function App() {
   return (
     <div className="App">
       <div>
         <FetchAPI />
-      </div>
-      <div>
-        {/* <GoogleAPI /> */}
       </div>
     </div>
   );

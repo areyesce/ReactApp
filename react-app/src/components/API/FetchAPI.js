@@ -4,24 +4,35 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
-// YOUTUBE IMPORTS
+// YOUTUBE EMBED FILE + YOUTUBE API IMPORTS
 import "./styles.css";
 import YoutubeEmbed from "./YoutubeEmbed";
 import youtubesearchapi from 'youtube-search-api' 
 
+// Function: FetchAPI
+// Purpose: Declares three states (data,videos,hasInfo), 
+// Return: page that prompts user input, onChange calls fetchData function, which triggers searchYoutube function,
+// and displays information about vehicle and related YouTube videos after API responses received
+
 const FetchAPI = () => {
+
+// (data: array stores results from nhtsa.dot.gov/api)
     const [data, setData] = useState([])
+// (videos: array stores results from youtubesearchapi)
     const [videos, setVideos] = useState([])
+// (hasInfo: boolean switches to 'true' if youtubesearchapi results have been received)
     const [hasInfo, setHasInfo] = useState(null)
 
+// useEffect calls searchYoutube function (only after data is non-empty) and passes 'data' param 
     useEffect(() => {
         if (data.length > 0) {
-            console.log('DATA useEffect called')
             console.log(data)
             searchYoutube(data)
         }
     }, [data]); 
 
+// fetch function, called after input has been changed, sends query to nhtsa.dot.gov/api with user input,
+// then stores response in data, otherwise logs error message
     const fetchData = e => {
         const query = e.target.value
         fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/${query}?format=json`)
@@ -35,6 +46,9 @@ const FetchAPI = () => {
                 console.log(err)
             })
     }
+
+// sends query to youtubesearchapi using fields from data object parameter,
+// stores response in videos state, switches hasInfo boolean to true
     async function searchYoutube(data) {
         const searchString = `${data[0].Make} ${data[0].Model} ${data[0].ModelYear} ${data[0].BodyClass}&origin=https://localhost:3000`
         const videos = await youtubesearchapi.GetListByKeyword(searchString,false,3,[{type:"video"}])
@@ -42,9 +56,7 @@ const FetchAPI = () => {
         setHasInfo(true)
         console.log('youtube result')
         console.log(videos.items)
-        console.log(videos.items[0].id);
     }
-
 
     return (
         <div>
