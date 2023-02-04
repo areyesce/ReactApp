@@ -10,7 +10,7 @@ import YoutubeEmbed from "./YoutubeEmbed";
 import youtubesearchapi from 'youtube-search-api' 
 
 // Function: FetchAPI
-// Purpose: Declares three states (data,videos,hasInfo), 
+// Purpose: Declares three states (data,videos,hasInfo), declares fetchData and searchYoutube functions
 // Return: page that prompts user input, onChange calls fetchData function, which triggers searchYoutube function,
 // and displays information about vehicle and related YouTube videos after API responses received
 
@@ -31,7 +31,7 @@ const FetchAPI = () => {
         }
     }, [data]); 
 
-// fetch function, called after input has been changed, sends query to nhtsa.dot.gov/api with user input,
+// fetchData function, called after input has been changed, sends query to nhtsa.dot.gov/api with user input,
 // then stores response in data, otherwise logs error message
     const fetchData = e => {
         const query = e.target.value
@@ -47,7 +47,7 @@ const FetchAPI = () => {
             })
     }
 
-// sends query to youtubesearchapi using fields from data object parameter,
+// searchYoutube function sends query to youtubesearchapi using fields from data object parameter,
 // stores response in videos state, switches hasInfo boolean to true
     async function searchYoutube(data) {
         const searchString = `${data[0].Make} ${data[0].Model} ${data[0].ModelYear} ${data[0].BodyClass}&origin=https://localhost:3000`
