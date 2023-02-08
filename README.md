@@ -9,4 +9,4 @@ Submission for Neural Claim System Technical Assessment by Angela Reyes.
 * Allow CORS: Access-Control-Allow-Origin (https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en)
 
 
-Run 'npm start' then open http://localhost:3000 to view it in your browser.
+Run 'npm start' in ReactApp/react-app, then open http://localhost:3000 to view it in your browser.
