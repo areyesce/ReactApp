@@ -12,5 +12,5 @@ Along with the results of the search, the page displays three videos of the vehi
 
 * Allow CORS: Access-Control-Allow-Origin (https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en)
 
-
+## To execute:
 Run 'npm start' in ReactApp/react-app, then open http://localhost:3000 to view it in your browser.
