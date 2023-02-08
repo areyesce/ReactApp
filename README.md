@@ -1,6 +1,10 @@
-# NCSReactApp
+# ReactApp
 
-Submission for Neural Claim System Technical Assessment by Angela Reyes.
+Webpage loads input field that allows a user to search for vehicle details by VIN.
+
+After sending query to the NHTSA Public API (vpic.nhtsa.dot.gov/api/) the page displays the YEAR, MAKE, MODEL, and BODY STYLE of the vehicle along with six other vehicle features.
+
+Along with the results of the search, the page displays three videos of the vehicle using a Youtube search api (https://www.npmjs.com/package/youtube-search-api).
 
 ## Requires two extensions when using Chrome:
 
