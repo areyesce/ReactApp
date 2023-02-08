@@ -1,6 +1,6 @@
 # ReactApp
 
-Webpage loads input field that allows a user to search for vehicle details by VIN.
+Webpage loads input field that allows a user to search for vehicle details by VIN number
 
 After sending query to the NHTSA Public API (vpic.nhtsa.dot.gov/api/) the page displays the YEAR, MAKE, MODEL, and BODY STYLE of the vehicle along with six other vehicle features.
 
