@@ -1,4 +1,4 @@
-# ReactApp
+# ReactApp Description
 
 Webpage loads input field that allows a user to search for vehicle details by VIN number
 
