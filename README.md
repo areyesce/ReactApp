@@ -4,7 +4,7 @@ Webpage loads input field that allows a user to search for vehicle details by VI
 
 After sending query to the NHTSA Public API ([vpic.nhtsa.dot.gov/api/](https://vpic.nhtsa.dot.gov/api/)) the page displays the YEAR, MAKE, MODEL, and BODY STYLE of the vehicle along with six other vehicle features.
 
-Along with the results of the search, the page displays three videos of the vehicle using a Youtube search api (https://www.npmjs.com/package/youtube-search-api).
+Along with the results of the search, the page displays three videos of the vehicle using a Youtube search API (https://www.npmjs.com/package/youtube-search-api).
 
 ## Requires two extensions when using Chrome:
 
