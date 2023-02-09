@@ -16,3 +16,12 @@ Along with the results of the search, the page displays three videos of the vehi
 
 ## To execute:
 Run 'npm start' in ReactApp/react-app, then open http://localhost:3000 to view it in your browser.
+
+
+<img width="1440" alt="Screen Shot 2023-02-09 at 10 59 43 AM" src="https://user-images.githubusercontent.com/69359136/217901377-13d4a36b-62db-4d68-8890-4c75860b646c.png">
+
+<img width="1440" alt="1FTFW1ET7CFC19542" src="https://user-images.githubusercontent.com/69359136/217901452-738c6149-4f91-46c7-8250-2abb2b05fd65.png">
+
+<img width="1440" alt="Screen Shot 2023-02-09 at 11 03 38 AM" src="https://user-images.githubusercontent.com/69359136/217901492-a5867e8e-e34a-426d-b038-54562fc86f04.png">
+
+<img width="1440" alt="Screen Shot 2023-02-09 at 11 03 53 AM" src="https://user-images.githubusercontent.com/69359136/217901516-f43e6805-d1dc-4722-8aa9-cec88e5388f5.png">
