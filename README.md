@@ -17,6 +17,7 @@ Along with the results of the search, the page displays three videos of the vehi
 ## To execute:
 Run 'npm start' in ReactApp/react-app, then open http://localhost:3000 to view it in your browser.
 
+![VideoDemo](https://user-images.githubusercontent.com/69359136/217918307-e3ae6c6a-e6af-480a-877a-b1304fa3d6dd.gif)
 
 <img width="1440" alt="Screen Shot 2023-02-09 at 10 59 43 AM" src="https://user-images.githubusercontent.com/69359136/217901377-13d4a36b-62db-4d68-8890-4c75860b646c.png">
 
@@ -26,6 +27,6 @@ Run 'npm start' in ReactApp/react-app, then open http://localhost:3000 to view i
 
 <img width="1440" alt="Screen Shot 2023-02-09 at 11 03 53 AM" src="https://user-images.githubusercontent.com/69359136/217901516-f43e6805-d1dc-4722-8aa9-cec88e5388f5.png">
 
-![VideoDemo](https://user-images.githubusercontent.com/69359136/217918307-e3ae6c6a-e6af-480a-877a-b1304fa3d6dd.gif)
+
 
 
