@@ -1,4 +1,4 @@
-# React App to Search & Display Vehicle Info + Videos by VIN
+# Search & Display Vehicle Info + Videos by VIN
 
 ## Description
 
